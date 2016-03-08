@@ -9,5 +9,12 @@
     "transform-decorators",
     "transform-object-assign",
     "transform-object-rest-spread"
-  ]
+  ],
+  "env": {
+    "start": {
+      "presets": [
+        "react-hmre"
+      ]
+    }
+  }
 }
