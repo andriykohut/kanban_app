@@ -36,7 +36,9 @@ export default class App extends React.Component {
   render() {
     return <div>
       <button onClick={this.addNote}>+</button>
-      <Notes notes={this.state.notes} onEdit={this.editNote} />
+      <Notes notes={this.state.notes}
+        onEdit={this.editNote}
+        onDelete={this.deleteNote} />
     </div>;
   }
   editNote = (id, task) => {
@@ -50,5 +52,13 @@ export default class App extends React.Component {
       return note;
     });
     this.setState({ notes });
+  }
+  deleteNote = (id, e) => {
+    // Avoid bubbling tp edit
+    e.stopPropagation();
+
+    this.setState({
+      notes: this.state.notes.filter(note => note.id !== id)
+    });
   }
 }
