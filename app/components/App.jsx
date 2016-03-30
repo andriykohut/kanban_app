@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Notes from './Notes.jsx';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return <div>
       <button onClick={this.addNote}>+</button>
@@ -32,3 +32,5 @@ export default class App extends React.Component {
     });
   }
 }
+
+export default App;

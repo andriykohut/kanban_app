@@ -1,7 +1,7 @@
 import React from 'react';
 import Note from './Note.jsx';
 
-export default ({notes, onEdit, onDelete}) => {
+const Notes = ({notes, onEdit, onDelete}) => {
   return (
     <ul>{notes.map(note =>
       <li key={note.id}>
@@ -13,3 +13,5 @@ export default ({notes, onEdit, onDelete}) => {
     )}</ul>
   );
 }
+
+export default Notes;
