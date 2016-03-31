@@ -14,4 +14,10 @@ const Notes = ({notes, onEdit, onDelete}) => {
   );
 }
 
+Notes.propTypes = {
+  notes: React.PropTypes.array.isRequired,
+  onEdit: React.PropTypes.func.isRequired,
+  onDelete: React.PropTypes.func.isRequired
+};
+
 export default Notes;

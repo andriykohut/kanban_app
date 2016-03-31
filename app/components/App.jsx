@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import Notes from './Notes.jsx';
 
 class App extends React.Component {
@@ -31,6 +31,11 @@ class App extends React.Component {
       id
     });
   }
+}
+
+App.propTypes = {
+  notes: React.PropTypes.array.isRequired,
+  dispatch: React.PropTypes.func.isRequired
 }
 
 export default App;

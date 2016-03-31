@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Note extends React.Component {
+class Note extends React.Component {
   constructor(props) {
     super(props);
     this.state = { editing: false };
@@ -53,3 +53,11 @@ export default class Note extends React.Component {
     });
   }
 }
+
+Note.propTypes = {
+  task: React.PropTypes.string.isRequired,
+  onDelete: React.PropTypes.func.isRequired,
+  onEdit: React.PropTypes.func.isRequired
+};
+
+export default Note;

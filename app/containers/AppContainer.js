@@ -5,8 +5,4 @@ const AppContainer = connect(state => ({
   notes: state.notes
 }))(App);
 
-AppContainer.initialState = {
-  notes: []
-}
-
 export default AppContainer;
