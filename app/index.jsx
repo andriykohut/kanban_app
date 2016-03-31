@@ -3,15 +3,15 @@ import './main.css';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, compose } from 'redux';
+import persistState from 'redux-localstorage';
 import ReactDOM from 'react-dom';
 
 import kanbanApp from './reducers.js';
 import AppContainer from './containers/AppContainer';
-import DevTools from './containers/DevTools';
 
 const enhancer = compose(
-  // Required! Enable Redux DevTools with the monitors you chose
-  DevTools.instrument()
+  persistState(),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 
 function configureStore(initialState) {
@@ -23,10 +23,7 @@ let store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <div>
-      <AppContainer />
-      <DevTools />
-    </div>
+    <AppContainer />
   </Provider>,
   document.getElementById('app')
 );
